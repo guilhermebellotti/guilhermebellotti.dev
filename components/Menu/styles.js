@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const Container = styled.nav`
@@ -23,11 +24,11 @@ export const LogoContainer = styled.a`
 `;
 export const Infos = styled.div`
   margin-left: 10px;
-  @media (max-width: 475px) {
+  @media (max-width: 350px) {
     display: none;
   }
 `;
-export const Name = styled.p`
+export const Name = styled.h5`
   font-size: 14px;
   font-weight: 500;
   margin-bottom: 3px;
@@ -77,26 +78,27 @@ export const ButtonMenu = styled.button`
   transition: all 0.125s ease-in-out;
   position: relative;
   z-index: 10;
+  min-width: 82px;
   &:hover {
     background-color: var(--second-color);
     color: var(--third-color);
   }
 `;
-export const MenuList = styled.div`
+export const MenuList = styled(motion.div)`
   position: absolute;
   width: 100%;
   height: 100%;
   left: 0;
   top: 0;
   background-color: var(--main-color);
-  transition: all 0.325s ease-in-out;
+  /* transition: all 0.325s ease-in-out; */
   /* transform: ${({ openMenu }) =>
     openMenu ? "translateY(0)" : "translateY(-100%)"}; */
+  /* visibility: ${({ openMenu }) => (openMenu ? "visible" : "hidden")};
+  opacity: ${({ openMenu }) => (openMenu ? "1" : "0")}; */
   z-index: ${({ openMenu }) => (openMenu ? "9" : "-1")};
-  visibility: ${({ openMenu }) => (openMenu ? "visible" : "hidden")};
-  opacity: ${({ openMenu }) => (openMenu ? "1" : "0")};
 `;
-export const List = styled.ul`
+export const List = styled(motion.ul)`
   list-style: none;
   padding: 0;
   display: flex;
@@ -107,53 +109,48 @@ export const List = styled.ul`
   /* transition: all 0.5s ease-in-out;
   transform: ${({ openMenu }) =>
     openMenu ? "translateY(0)" : "translateY(-10%)"}; */
+  ul {
+    text-align: center;
+    /* display: none; */
+  }
 `;
-export const Item = styled.li`
+export const Item = styled(motion.li)`
   padding: 0;
   margin-bottom: 25px;
-  /* transition: all 1s ease-in-out;
-  &:nth-child(1) {
-    transform: ${({ openMenu }) =>
-    openMenu ? "translateY(0)" : "translateY(-100%)"};
-  }
-  &:nth-child(2) {
-    transform: ${({ openMenu }) =>
-    openMenu ? "translateY(0)" : "translateY(-200%)"};
-  }
-  &:nth-child(3) {
-    transform: ${({ openMenu }) =>
-    openMenu ? "translateY(0)" : "translateY(-300%)"};
-  }
-  &:nth-child(4) {
-    transform: ${({ openMenu }) =>
-    openMenu ? "translateY(0)" : "translateY(-400%)"};
-  }
-  &:nth-child(5) {
-    transform: ${({ openMenu }) =>
-    openMenu ? "translateY(0)" : "translateY(-500%)"};
-  } */
-  &:last-of-type {
-    position: relative;
-    &::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -5px;
-      width: 100%;
-      height: 12px;
-      z-index: -1;
-      background-color: var(--second-color);
-    }
-  }
+  /* transform: translateY(-500px); */
   a {
     color: var(--third-color);
     text-decoration: none;
     font-weight: 500;
     font-size: 24px;
-    transition: all 0.125s ease-in-out;
+    transition: background 0.125s ease-in-out;
     text-transform: uppercase;
-    &:hover {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 100%;
+      height: 0px;
+      z-index: -1;
       background-color: var(--second-color);
+      transition: height 0.125s ease;
+    }
+    &:hover::after {
+      height: calc(100% + 2px);
+    }
+  }
+  &:last-of-type {
+    a {
+      ::after {
+        height: 12px;
+      }
+      :hover::after {
+        height: calc(100% + 2px);
+      }
     }
   }
 `;

@@ -7,22 +7,22 @@ const links = [
   {
     label: "Blog",
     url: "/",
-    title: "Página inicial",
+    title: "Blog",
   },
   {
     label: "Sobre mim",
     url: "/",
-    title: "Página inicial",
+    title: "Sobre mim",
   },
   {
     label: "Projetos",
     url: "/",
-    title: "Página inicial",
+    title: "Projetos",
   },
   {
     label: "Fazer orçamento",
     url: "/",
-    title: "Página inicial",
+    title: "Solicite um orçamento",
   },
 ];
 export default links;
