@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Header from "../components/Header";
 import Menu from "../components/Menu";
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
         <link rel="icon" href="/logo-guilhermebellotti.ico" />
       </Head>
       <Menu />
+      <Header />
     </>
   );
 }

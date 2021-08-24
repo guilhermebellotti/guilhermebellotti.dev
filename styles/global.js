@@ -72,6 +72,9 @@ const GlobalStyle = createGlobalStyle`
   }
   h1 {
     font-size: 3rem;
+    b{
+      font-weight: 700;
+    }
   }
   h2 {
     font-size: 1.75rem;
@@ -81,6 +84,11 @@ const GlobalStyle = createGlobalStyle`
   }
   h4 {
     font-size: 0.875rem;
+  }
+  p{
+    b{
+      font-weight: 700;
+    }
   }
   button {
     background-color: transparent;
