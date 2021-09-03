@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const Container = styled.nav`
   width: 100%;
   min-width: 146px;
-  padding: 20px;
+  padding: 20px 50px;
 `;
 export const Wrapper = styled.div`
   width: 100%;
@@ -36,6 +36,7 @@ export const Name = styled.h5`
 export const Role = styled.p`
   font-size: 12px;
   font-weight: 300;
+  line-height: unset;
 `;
 export const MenuContainer = styled.div`
   display: flex;

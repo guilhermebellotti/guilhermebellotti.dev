@@ -86,6 +86,8 @@ const GlobalStyle = createGlobalStyle`
     font-size: 0.875rem;
   }
   p{
+    font-size: 1rem;
+    line-height: 30px;
     b{
       font-weight: 700;
     }

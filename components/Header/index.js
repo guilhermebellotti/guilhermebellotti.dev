@@ -1,5 +1,6 @@
 import * as S from "./styles";
 
+import { ButtonPrimary } from "../Buttons";
 import Image from "next/image";
 import VectorHeader from "../../src/imgs/header-vector.svg";
 
@@ -17,6 +18,7 @@ function Header() {
             visuais incríveis e funcionais. Isso me faz amar cada vez mais minha
             profissão.
           </S.Description>
+          <ButtonPrimary />
         </S.BoxText>
         <S.BoxBanner>
           <Image src={VectorHeader} alt="" />
